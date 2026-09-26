@@ -46,7 +46,12 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(184, 71, 37, 0.035) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(20, 83, 77, 0.03) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='none' stroke='%23B84725' stroke-width='1' stroke-opacity='0.035'/%3E%3Cpath d='M30 15l15 15-15 15-15-15z' fill='none' stroke='%23B84725' stroke-width='0.75' stroke-opacity='0.02'/%3E%3C/svg%3E");
+  background-attachment: fixed;
   color: var(--ink);
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
@@ -90,52 +95,19 @@ header.hero {
   margin-bottom: 16px;
 }
 
-.hero-title-wrap {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 14px;
-}
-
-.hero-title-wrap h1 {
-  margin-bottom: 0;
-}
-
-.kudla-script {
-  font-family: 'Bitter', serif, 'Noto Sans Kannada', system-ui;
-  font-size: clamp(1.2rem, 3.2vw, 1.7rem);
-  font-weight: 600;
-  color: var(--terracotta);
-  background: var(--terracotta-soft);
-  padding: 3px 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(184, 71, 37, 0.22);
-  letter-spacing: 0.04em;
-  user-select: none;
-  display: inline-flex;
-  align-items: center;
-}
-
-.kudla-ornament {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin: 40px auto 10px;
-  color: var(--terracotta);
-  opacity: 0.5;
-  font-size: 0.72rem;
+h1 {
+  font-family: 'Bitter', serif;
   font-weight: 700;
-  letter-spacing: 0.2em;
-  user-select: none;
+  font-size: clamp(2.2rem, 5.5vw, 3.2rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 16px;
 }
-.kudla-ornament::before,
-.kudla-ornament::after {
-  content: "";
-  width: 48px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--terracotta), transparent);
+
+h1 span.accent {
+  color: var(--terracotta);
+  font-style: italic;
 }
 
 .tagline {
