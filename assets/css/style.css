@@ -44,13 +44,14 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
 body {
   background: var(--bg);
   color: var(--ink);
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 /* Basel Mission Mangalore Terracotta Tile Decorative Band */
@@ -230,9 +231,9 @@ h1 span.accent {
   background: #25D366;
   color: #FFFFFF;
   text-decoration: none;
-  padding: 4px 12px;
+  padding: 6px 14px;
   border-radius: 100px;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;
   border: none;
@@ -343,10 +344,11 @@ input#search:focus {
 }
 .search-hint-tag {
   background: var(--card-subtle);
-  padding: 2px 8px;
+  padding: 4px 10px;
   border-radius: 6px;
   cursor: pointer;
   border: 1px solid transparent;
+  user-select: none;
 }
 .search-hint-tag:hover {
   border-color: var(--line);
@@ -376,6 +378,12 @@ input#search:focus {
   letter-spacing: 0.04em;
 }
 
+.filter-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 button.pill {
   font-family: inherit;
   font-size: 0.85rem;
@@ -387,6 +395,7 @@ button.pill {
   color: var(--ink);
   cursor: pointer;
   transition: all 0.15s ease;
+  user-select: none;
 }
 button.pill:hover {
   border-color: var(--muted);
@@ -443,7 +452,7 @@ li.entry-card {
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   display: flex;
   flex-direction: column;
-  scroll-margin-top: 30px;
+  scroll-margin-top: 40px;
 }
 li.entry-card:hover {
   box-shadow: var(--shadow-md);
@@ -461,11 +470,6 @@ li.entry-card.highlighted-spot {
 .card-grid {
   display: grid;
   grid-template-columns: 220px 1fr;
-}
-@media (max-width: 680px) {
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .card-photo-wrap {
@@ -502,6 +506,11 @@ li.entry-card:hover .card-photo {
   margin-top: 8px;
   font-weight: 600;
   color: var(--muted);
+}
+
+/* Photo Badges (Visible on mobile photo overlay) */
+.photo-overlay-badges {
+  display: none;
 }
 
 .card-body {
@@ -666,12 +675,13 @@ li.entry-card:hover .card-photo {
   cursor: pointer;
   background: var(--bg);
   border: 1px solid var(--line);
-  padding: 4px 10px;
+  padding: 6px 12px;
   border-radius: 100px;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--ink);
   transition: all 0.2s ease;
+  user-select: none;
 }
 .eaten-check-btn.checked {
   background: var(--cheap-soft);
@@ -687,8 +697,8 @@ li.entry-card:hover .card-photo {
   background: var(--bg);
   border: 1px solid var(--line);
   border-radius: 100px;
-  padding: 4px 10px;
-  font-size: 0.78rem;
+  padding: 6px 12px;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--ink);
   cursor: pointer;
@@ -715,14 +725,15 @@ li.entry-card:hover .card-photo {
 .share-spot-btn {
   background: var(--bg);
   border: 1px solid var(--line);
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: 100px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--muted);
+  user-select: none;
 }
 .share-spot-btn:hover { color: var(--ink); border-color: var(--ink); }
 
@@ -734,10 +745,11 @@ li.entry-card:hover .card-photo {
   text-decoration: none;
   font-weight: 600;
   font-size: 0.85rem;
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: 100px;
   background: var(--sea-soft);
   transition: all 0.15s ease;
+  user-select: none;
 }
 .maps-btn:hover {
   background: var(--sea);
@@ -797,8 +809,8 @@ li.entry-card:hover .card-photo {
   background: var(--bg);
   border: 1px solid var(--line);
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -870,4 +882,296 @@ footer {
   line-height: 1.6;
   border-top: 1px solid var(--line);
   padding-top: 16px;
+}
+
+/* =========================================================
+   STICKY MOBILE DOCK (APP-LIKE EXPERIENCE)
+   ========================================================= */
+.mobile-sticky-dock {
+  display: none;
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE OVERHAUL (< 680px)
+   Tailored specifically for smartphone screens & thumb navigation
+   ========================================================= */
+@media (max-width: 680px) {
+  header.hero {
+    padding: 26px 16px 18px;
+  }
+  .hero-pretitle {
+    font-size: 0.74rem;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: clamp(1.85rem, 8vw, 2.35rem);
+    line-height: 1.18;
+    margin-bottom: 12px;
+  }
+  .tagline {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .rules-card {
+    padding: 12px 14px;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+  }
+  .header-meta-row {
+    margin-bottom: 18px;
+  }
+
+  /* Foodie Score Banner on Mobile */
+  .foodie-score-banner {
+    padding: 14px 16px;
+  }
+  .score-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .score-footer-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .whatsapp-share-btn {
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 0.86rem;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Matchmaker Card */
+  .matchmaker-card {
+    padding: 16px;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 14px;
+  }
+  .dice-btn {
+    justify-content: center;
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 0.95rem;
+  }
+
+  /* Main Container */
+  main {
+    padding: 0 14px 110px; /* Generous clearance for floating mobile dock */
+  }
+
+  /* Controls Panel */
+  .controls-panel {
+    padding: 14px;
+    margin-bottom: 22px;
+    border-radius: var(--radius-sm);
+  }
+  input#search {
+    font-size: 16px !important; /* CRITICAL: Prevents iOS auto-zoom */
+    padding: 11px 14px 11px 38px;
+  }
+  .search-hints {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .search-hints::-webkit-scrollbar { display: none; }
+  .search-hint-tag {
+    flex-shrink: 0;
+  }
+
+  /* Swipeable Filter Pills on Mobile (App-like) */
+  .filter-section {
+    gap: 10px;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+  .filter-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .filter-row::-webkit-scrollbar { display: none; }
+  .filter-label {
+    min-width: 50px;
+    font-size: 0.74rem;
+    flex-shrink: 0;
+  }
+  .filter-group {
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+  }
+  button.pill {
+    white-space: nowrap;
+    font-size: 0.82rem;
+    padding: 7px 13px;
+    flex-shrink: 0;
+  }
+
+  /* Card Grid Overhaul on Mobile */
+  ul.list {
+    gap: 18px;
+  }
+  li.entry-card {
+    border-radius: var(--radius-md);
+  }
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  .card-photo-wrap {
+    height: 190px;
+    min-height: 190px;
+    position: relative;
+  }
+  .photo-overlay-badges {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.3) 100%);
+  }
+  .photo-badge-area {
+    background: rgba(20, 83, 77, 0.92) !important;
+    color: #FFFFFF !important;
+    backdrop-filter: blur(6px);
+    font-weight: 700;
+    font-size: 0.74rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  .photo-badge-price {
+    background: rgba(184, 71, 37, 0.95);
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+
+  .card-body {
+    padding: 16px;
+  }
+  .card-header-row {
+    margin-bottom: 4px;
+  }
+  .card-header-row .entry-price-tag {
+    display: none; /* Already highlighted on photo overlay */
+  }
+  .tag-row .badge.area {
+    display: none; /* Already highlighted on photo overlay */
+  }
+  .entry-title {
+    font-size: 1.25rem;
+  }
+  .order-box {
+    padding: 9px 12px;
+    font-size: 0.88rem;
+  }
+  .take-text {
+    font-size: 0.92rem;
+  }
+  .timing-tip {
+    font-size: 0.79rem;
+    padding: 8px 10px;
+  }
+
+  /* Card Footer on Mobile (Ergonomic Thumb Targets) */
+  .card-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding-top: 12px;
+  }
+  .footer-left {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+  }
+  .eaten-check-btn, .rate-btn {
+    justify-content: center;
+    padding: 9px 8px;
+    font-size: 0.82rem;
+    min-height: 42px;
+  }
+  .footer-right-actions {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px;
+    width: 100%;
+  }
+  .share-spot-btn {
+    min-height: 44px;
+    padding: 0 16px;
+    justify-content: center;
+  }
+  .maps-btn {
+    min-height: 44px;
+    justify-content: center;
+    font-size: 0.9rem;
+  }
+
+  /* Bottom Sheet Modals on Mobile */
+  .modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+  .modal-box {
+    border-radius: 20px 20px 0 0;
+    max-height: 84vh;
+    padding: 24px 20px 36px;
+  }
+
+  /* Sticky Bottom Floating Dock */
+  .mobile-sticky-dock {
+    position: fixed;
+    bottom: 16px;
+    left: 14px;
+    right: 14px;
+    background: rgba(28, 30, 27, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 100px;
+    padding: 6px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+  .dock-btn {
+    background: transparent;
+    border: none;
+    color: #FAF7F0;
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 100px;
+    cursor: pointer;
+  }
+  .dock-btn:active {
+    transform: scale(0.95);
+  }
+  .dock-btn-accent {
+    background: var(--terracotta);
+    color: #FFFFFF;
+    box-shadow: 0 2px 10px rgba(184, 71, 37, 0.45);
+  }
 }

@@ -231,6 +231,9 @@ function updateFoodieScore() {
 
   if (badgeEl) badgeEl.textContent = rank;
 
+  const dockScore = document.getElementById("dock-score-pill");
+  if (dockScore) dockScore.textContent = `Score (${count}/${total})`;
+
   if (shareBtn) {
     const text = encodeURIComponent(
       `I've conquered ${count}/${total} iconic spots on Worth It: Mangalore and earned the title "${rank}"! Can you beat my Kudla food score? Check it out: https://worthitmangalore.com/`
@@ -258,6 +261,21 @@ function pickRandomSpot() {
       setTimeout(() => el.classList.remove("highlighted-spot"), 2500);
     }
   }, 100);
+}
+
+function scrollToSearch() {
+  const searchInput = document.getElementById("search");
+  if (searchInput) {
+    searchInput.scrollIntoView({ behavior: "smooth", block: "center" });
+    setTimeout(() => searchInput.focus(), 300);
+  }
+}
+
+function scrollToScore() {
+  const banner = document.querySelector(".foodie-score-banner");
+  if (banner) {
+    banner.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
 }
 
 /* =========================================================
@@ -379,6 +397,10 @@ function renderList() {
       <div class="card-grid">
         <div class="card-photo-wrap">
           ${photoHtml}
+          <div class="photo-overlay-badges">
+            <span class="badge area photo-badge-area">📍 ${e.area}</span>
+            <span class="photo-badge-price">${e.price}</span>
+          </div>
         </div>
         <div class="card-body">
           <div>

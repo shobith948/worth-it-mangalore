@@ -216,6 +216,22 @@
     </div>
   </div>
 
+  <!-- Floating Mobile Sticky Dock -->
+  <nav class="mobile-sticky-dock" aria-label="Quick Mobile Actions">
+    <button class="dock-btn" onclick="scrollToSearch()" aria-label="Search places">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <span>Search</span>
+    </button>
+    <button class="dock-btn dock-btn-accent" onclick="pickRandomSpot()" aria-label="Random recommendation">
+      <span>🎲</span>
+      <span>What to Eat?</span>
+    </button>
+    <button class="dock-btn" onclick="scrollToScore()" aria-label="Your foodie score">
+      <span>🏆</span>
+      <span id="dock-score-pill">0/7</span>
+    </button>
+  </nav>
+
   <!-- Application Scripts -->
   <script src="assets/js/schema.js"></script>
   <script src="assets/js/app.js"></script>
