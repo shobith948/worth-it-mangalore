@@ -1,0 +1,149 @@
+[
+  {
+    "id": "giri-manjas",
+    "name": "Giri Manja's",
+    "area": "Car Street",
+    "tags": ["splurge", "underrated"],
+    "audience": ["local", "tourist"],
+    "price": "₹380 - ₹550 per person",
+    "order": "Anjal Tawa Fry + Squid Masala Fry with Fish Meal",
+    "take": "Old heritage tile house dining. The Anjal (King Fish) tawa fry is unmatched anywhere on the Konkan coast. Arrive by 12:30 PM or prepare to wait 45 mins in the sun.",
+    "timing": "Best time: 12:15 PM or 2:30 PM (Peak rush: 1:00 PM - 2:00 PM). Closed for dinner on Sundays.",
+    "highlightedReview": {
+      "quote": "The garlic-red chilli tawa masala seared on the Anjal slice is what every Mangalorean dreams of when away from home.",
+      "author": "Kudla Native & Regular"
+    },
+    "votes": 184,
+    "visited": "2026-09-18",
+    "mapsUrl": "https://maps.google.com/?q=Giri+Manja's+Mangalore",
+    "photo": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&auto=format&fit=crop&q=80",
+    "fallbackIcon": "🐟",
+    "mealType": "lunch"
+  },
+  {
+    "id": "hotel-narayana",
+    "name": "Hotel Narayana",
+    "area": "Bunder (Old Port)",
+    "tags": ["cheap", "underrated"],
+    "audience": ["local", "tourist"],
+    "price": "₹180 - ₹280 per person",
+    "order": "Standard Fish Meals with Fresh Fried Kane (Ladyfish) or Bangude",
+    "take": "No menus, no frills, right next to the historic fishing docks. Hot boiled rice served on banana leaves while servers walk around with sizzling fish platters straight out of the hot oil pans.",
+    "timing": "Best time: 1:00 PM - 2:00 PM when the morning dock catches hit the kitchen. Avoid post 3:00 PM.",
+    "highlightedReview": {
+      "quote": "Pure old-school port vibe. The fish curry gravy poured over parboiled rice is simple perfection.",
+      "author": "Frequent Dockside Diner"
+    },
+    "votes": 215,
+    "visited": "2026-09-22",
+    "mapsUrl": "https://maps.google.com/?q=Hotel+Narayana+Bunder+Mangalore",
+    "photo": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&auto=format&fit=crop&q=80",
+    "fallbackIcon": "🍲",
+    "mealType": "lunch"
+  },
+  {
+    "id": "pabbas-ideal",
+    "name": "Pabbas (Ideal Ice Cream)",
+    "area": "Lalbagh / Hampankatta",
+    "tags": ["cheap"],
+    "audience": ["local", "tourist"],
+    "price": "₹90 - ₹160 per ice cream",
+    "order": "Gadbad (or 'Dilkush' / 'Tiramisu Coupe')",
+    "take": "Mangalore's crown jewel dessert spot since 1975. The multi-layered Gadbad with jelly, fruits, and vanilla/strawberry scoops is legendary. Fast service despite relentless weekend crowds.",
+    "timing": "Open until 10:30 PM. Expect 15-20 min queues on Friday and Saturday evenings, but the table turnover is lightning fast.",
+    "highlightedReview": {
+      "quote": "You simply haven't visited Mangalore if you haven't sat inside Pabbas at 10 PM eating a tall glass of Gadbad.",
+      "author": "Traveler from Bengaluru"
+    },
+    "votes": 342,
+    "visited": "2026-09-24",
+    "mapsUrl": "https://maps.google.com/?q=Pabbas+Ideal+Cafe+Lalbagh+Mangalore",
+    "photo": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&auto=format&fit=crop&q=80",
+    "fallbackIcon": "🍨",
+    "mealType": "dessert"
+  },
+  {
+    "id": "machali",
+    "name": "Machali",
+    "area": "Sharavu Temple Road",
+    "tags": ["splurge"],
+    "audience": ["tourist", "local"],
+    "price": "₹450 - ₹650 per person",
+    "order": "Crab Ghee Roast + Marwai Sukka (Clams) + Neer Dosa",
+    "take": "Super popular, air-conditioned, and remarkably consistent. The Crab Ghee Roast here has deep byadagi chilli aroma without burning your palate. Order Neer Dosa to mop up the ghee sauce.",
+    "timing": "Peak rush: 1:30 PM - 2:30 PM. Token system operates on busy weekends. Valet parking can get crammed.",
+    "highlightedReview": {
+      "quote": "Cleanest seafood presentation in city center with zero compromise on authentic spice levels.",
+      "author": "Food Critic Review"
+    },
+    "votes": 198,
+    "visited": "2026-09-15",
+    "mapsUrl": "https://maps.google.com/?q=Machali+Restaurant+Mangalore",
+    "photo": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&auto=format&fit=crop&q=80",
+    "fallbackIcon": "🦀",
+    "mealType": "lunch"
+  },
+  {
+    "id": "shetty-lunch-home",
+    "name": "Shetty Lunch Home",
+    "area": "Hampankatta",
+    "tags": ["splurge", "underrated"],
+    "audience": ["local", "tourist"],
+    "price": "₹400 - ₹550 per person",
+    "order": "Original Chicken Ghee Roast + Fluffy Neer Dosa",
+    "take": "The lineage that originally pioneered Kundapura-style Ghee Roast. Thick, glistening crimson ghee coating, tender meat, and earthy spices. Best experienced with friends for sharing.",
+    "timing": "Best for dinner around 8:00 PM. Order 4-5 Neer Dosas per ghee roast dish.",
+    "highlightedReview": {
+      "quote": "The standard against which all ghee roasts in India are compared. The aroma hits your nose before the plate reaches the table.",
+      "author": "Mangalore Food Enthusiast"
+    },
+    "votes": 167,
+    "visited": "2026-09-10",
+    "mapsUrl": "https://maps.google.com/?q=Shetty+Lunch+Home+Hampankatta+Mangalore",
+    "photo": "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=80",
+    "fallbackIcon": "🍗",
+    "mealType": "dinner"
+  },
+  {
+    "id": "taj-mahal-cafe",
+    "name": "Taj Mahal Cafe",
+    "area": "Car Street / Kodialbail",
+    "tags": ["cheap", "underrated"],
+    "audience": ["local", "tourist"],
+    "price": "₹50 - ₹90 per person",
+    "order": "Tuppa Dosa (Ghee Roast Dosa) + Mangalore Buns + Filter Coffee",
+    "take": "Centuries of heritage. The Mangalore Buns (banana-fermented sweet puris) served with coconut chutney and sambar are fluffy pillows of comfort. Pure vegetarian Kudla tradition.",
+    "timing": "Morning glory: 7:00 AM - 9:30 AM for the freshest batch of Buns and sizzling hot Tuppa Dosas.",
+    "highlightedReview": {
+      "quote": "The brass tumbler filter coffee alone is worth waking up early for. True old-world charm.",
+      "author": "Local Architect"
+    },
+    "votes": 220,
+    "visited": "2026-09-20",
+    "mapsUrl": "https://maps.google.com/?q=Taj+Mahal+Cafe+Car+Street+Mangalore",
+    "photo": "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=600&auto=format&fit=crop&q=80",
+    "fallbackIcon": "☕",
+    "mealType": "breakfast"
+  },
+  {
+    "id": "hotel-janatha-deluxe",
+    "name": "Hotel Janatha Deluxe",
+    "area": "K S Rao Road",
+    "tags": ["cheap"],
+    "audience": ["local"],
+    "price": "₹80 - ₹140 per person",
+    "order": "Goli Baje (available evening 4 PM) + Filter Coffee",
+    "take": "The quintessential 4 PM tea-time destination. Hot, crispy-outside, spongy-inside Goli Baje dipped in spicy green coconut chutney. If you arrive past 6 PM, they will usually be sold out.",
+    "timing": "Arrive at 4:15 PM sharp. Goli Baje is made in hot fresh batches and disappears fast.",
+    "highlightedReview": {
+      "quote": "The ginger and green chilli kick inside their Goli Baje is unbeatable on a rainy Mangalore evening.",
+      "author": "Daily Commuter"
+    },
+    "votes": 135,
+    "visited": "2026-09-08",
+    "mapsUrl": "https://maps.google.com/?q=Hotel+Janatha+Deluxe+KS+Rao+Road+Mangalore",
+    "photo": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80",
+    "fallbackIcon": "🥟",
+    "mealType": "snacks"
+  }
+]
