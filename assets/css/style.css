@@ -90,19 +90,52 @@ header.hero {
   margin-bottom: 16px;
 }
 
-h1 {
-  font-family: 'Bitter', serif;
-  font-weight: 700;
-  font-size: clamp(2.2rem, 5.5vw, 3.2rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin-bottom: 16px;
+.hero-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
 }
 
-h1 span.accent {
+.hero-title-wrap h1 {
+  margin-bottom: 0;
+}
+
+.kudla-script {
+  font-family: 'Bitter', serif, 'Noto Sans Kannada', system-ui;
+  font-size: clamp(1.2rem, 3.2vw, 1.7rem);
+  font-weight: 600;
   color: var(--terracotta);
-  font-style: italic;
+  background: var(--terracotta-soft);
+  padding: 3px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(184, 71, 37, 0.22);
+  letter-spacing: 0.04em;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.kudla-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 40px auto 10px;
+  color: var(--terracotta);
+  opacity: 0.5;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  user-select: none;
+}
+.kudla-ornament::before,
+.kudla-ornament::after {
+  content: "";
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--terracotta), transparent);
 }
 
 .tagline {
